@@ -1,0 +1,502 @@
+@import "styles.scss";
+
+@media (max-width: 1024px) {
+  // Section Description
+  .description {
+    &__header {
+      &__text {
+        @include subtitle(82%, #777);
+      }
+    }
+    &__photos {
+      flex-wrap: wrap;
+      &__col {
+        flex-direction: row;
+      }
+    }
+    &__photos__item {
+      width: 100%;
+    }
+  }
+
+  // Section Game
+  .game {
+    position: relative;
+    background: #000;
+    padding: 70px 0 150px;
+    &__header {
+      width: 48%;
+      &__icon {
+        top: 0;
+        left: 0;
+      }
+      &__title {
+        padding: 147px 0 0;
+      }
+      &__text {
+        @include subtitle(100%, #fff);
+      }
+    }
+    &__wrapper {
+      position: static;
+      width: 48%;
+    }
+  }
+  .game__consoles {
+    top: 190px;
+    left: 65%;
+    flex-direction: column;
+    max-width: 29%;
+    &__xbox {
+      margin: 0 0 50px;
+      &::after {
+        top: -15%;
+        left: -61%;
+      }
+    }
+    &__ps::after {
+      margin-right: 0px;
+    }
+  }
+
+  //   Section HP
+  .hp {
+    &__item__img {
+      margin: 42px 0 25px;
+    }
+    &__item__logos {
+      grid-template-columns: auto;
+      gap: 25px;
+      &__item {
+        justify-self: center;
+      }
+    }
+  }
+
+  //   Section Buy
+  .buy {
+    &__item__img {
+      width: 32.4%;
+    }
+    &__item-right {
+      width: calc(100% - 32.4%);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  $fztitle: 45px;
+  $fztext: 16px;
+
+  .container {
+    padding: 0 30px;
+  }
+  // Section Banner
+  .banner {
+    &__wrapper {
+      flex-direction: column;
+    }
+    &__logo {
+      margin-bottom: 10px;
+    }
+    &__social-media {
+      gap: 30px;
+    }
+    &__sticker {
+      margin: 0 auto;
+      width: 81%;
+      padding: 50px 13px;
+      text-align: center;
+      &__title {
+        font-size: $fztitle;
+      }
+    }
+  }
+
+  // Section Description
+  .description {
+    &__header {
+      &__title {
+        font-size: $fztitle;
+      }
+      &__text {
+        font-size: $fztext;
+        width: 100%;
+      }
+    }
+    &__photos {
+      &__col {
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+  }
+
+  // Section Game
+  .game {
+    &__header {
+      width: 100%;
+      &__title {
+        padding-top: 55%;
+        font-size: $fztitle;
+        margin-bottom: 25px;
+      }
+      &__icon {
+        width: 92px;
+        height: 92px;
+      }
+      &__text {
+        font-size: $fztext;
+      }
+    }
+    &__wrapper {
+      width: 70%;
+    }
+    &__form {
+      width: 100%;
+    }
+  }
+  .game__consoles {
+    flex-direction: row;
+    max-width: 60%;
+    top: 162px;
+    left: 50%;
+    transform: translateX(-50%);
+    &__xbox {
+      margin: 0 80px 0 0;
+    }
+    &__xbox::after {
+      top: -15%;
+      left: -61%;
+    }
+  }
+
+  // Section HP
+  .hp {
+    &__item-left {
+      margin: 70px 0 40px;
+    }
+    &__item__header {
+      &__title {
+        font-size: $fztitle;
+      }
+      &__text {
+        font-size: $fztext;
+      }
+    }
+    &__item__img {
+      margin: 0 auto 25px;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    &__wrapper {
+      grid-template-columns: 100%;
+    }
+    &__item__logos {
+      display: flex;
+      &__item {
+        justify-self: left;
+      }
+    }
+    &__item__list {
+      margin-bottom: 40px;
+      &__item {
+        font-size: $fztext;
+        margin-bottom: 18px;
+      }
+    }
+  }
+
+  // Section Serial
+  .serial {
+    height: 600px;
+    background: url(../img/sec-serial/bg-768.jpg) 50% / cover no-repeat;
+    &__header {
+      right: 60px;
+    }
+    &__social-media {
+      right: 60px;
+      &__item {
+        span {
+          font-size: 25px;
+        }
+      }
+    }
+    &__btn {
+      width: 85px;
+    }
+    &__facebook {
+      padding: 0 5px;
+    }
+    &__logo {
+      max-width: 600px;
+      width: 100%;
+    }
+  }
+
+  // Section Buy
+  .buy {
+    &__wrapper {
+      flex-direction: column;
+    }
+    &__item__img {
+      width: 100%;
+      height: 300px;
+      position: static;
+    }
+    &__item-right {
+      width: 100%;
+      padding: 40px 0 70px;
+    }
+    &__item__title {
+      font-size: $fztitle;
+    }
+    &__item__list-title {
+      font-size: 20px;
+    }
+    &__item__kit__list {
+      margin-bottom: 40px;
+      &__item {
+        font-size: $fztext;
+      }
+    }
+    &__item__platforms {
+      gap: 40px 56px;
+    }
+  }
+
+  // Footer
+  .footer {
+    &__wrapper {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  $fztitle: 30px;
+  $fztext: 16px;
+  $margin: 25px;
+
+  .container {
+    padding: 0 12px;
+  }
+
+  // Section Banner
+  .banner {
+    .container {
+      padding: 0;
+    }
+    &__social-media__item {
+      @include base-icon(25px, 25px);
+    }
+    &__sticker {
+      width: 100%;
+      padding: 30px 12px;
+      &__title {
+        font-size: $fztitle;
+      }
+      &__btn {
+        padding: 10px 50px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  // Section Description
+  .description {
+    .container {
+      padding: 0;
+    }
+    &__header {
+      padding: 0 12px;
+      &__title {
+        font-size: $fztitle;
+      }
+    }
+  }
+
+  // Section Game
+  .game {
+    &__header {
+      &__title {
+        padding-top: 70%;
+        font-size: $fztitle;
+      }
+      &__icon {
+        width: 62px;
+        height: 62px;
+      }
+    }
+    &__wrapper {
+      width: 100%;
+    }
+    &__form {
+      &__user-data {
+        input {
+          font-size: $fztext;
+        }
+      }
+      &__file {
+        &__imgs {
+          display: none;
+        }
+      }
+    }
+  }
+  .game__consoles {
+    max-width: 70%;
+  }
+
+  // Section HP
+  .hp {
+    &__item-left {
+      margin: 0 0 40px;
+    }
+    &__item__header {
+      &__title {
+        font-size: $fztitle;
+      }
+    }
+    &__item__logos {
+      gap: 14px;
+    }
+    .logos__hp-item img {
+      max-width: 80px;
+      width: 100%;
+      object-fit: cover;
+    }
+    &__item__list {
+      &__item:nth-child(1)::before {
+        @include list-item("../img/sec-hp/icon-adv-1.svg", 24px);
+      }
+      &__item:nth-child(2)::before {
+        @include list-item("../img/sec-hp/icon-adv-2.svg", 24px);
+        top: 0;
+        transform: translateY(0);
+      }
+      &__item:nth-child(3)::before {
+        @include list-item("../img/sec-hp/icon-adv-3.svg", 24px);
+        top: 0;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // Section Serial
+  .serial {
+    &__header {
+      padding: 0 10px;
+      position: static;
+      justify-content: center;
+    }
+    &__social-media {
+      flex-direction: row;
+      top: 93%;
+      left: 50%;
+      transform: translateX(-50%);
+      &__item {
+        margin: 0 30px 0 0;
+      }
+    }
+    &__btn {
+      width: 75px;
+    }
+  }
+
+  // Section Buy
+  .buy {
+    &__item__title {
+      font-size: $fztitle;
+    }
+    &__item__kit__list {
+      &__item:nth-child(1)::before {
+        @include list-item("../img/sec-buy/disk.svg", 24px);
+      }
+      &__item:nth-child(2)::before {
+        @include list-item("../img/sec-buy/case.svg", 24px);
+        top: 0;
+        transform: translateY(0);
+      }
+      &__item:nth-child(3)::before {
+        @include list-item("../img/sec-buy/collections.svg", 24px);
+        top: 0;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // Footer
+  .footer {
+    padding: 0;
+    &__container {
+      padding: 0;
+    }
+    &__wrapper {
+      gap: $margin;
+    }
+    &__item {
+      flex-direction: column;
+      &__info a {
+        font-size: $fztext;
+      }
+    }
+    &__partners {
+      gap: $margin;
+      padding: 40px 61px 0;
+    }
+    &__item__projekt-logo {
+      padding: 0 42px;
+    }
+    &__info {
+      width: 100%;
+      background: #e6e6e6;
+      gap: 15px;
+      padding: $margin 39px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  // Section Banner
+  .banner {
+    background: url(../img/banner-320/1.png) no-repeat;
+  }
+
+  @keyframes change-bg {
+    0% {
+      background: url(../img/banner-320/1.png) no-repeat;
+    }
+    33% {
+      background: url(../img/banner-320/2.png) no-repeat;
+    }
+    66% {
+      background: url(../img/banner-320/3.png) no-repeat;
+    }
+  }
+
+  // Section Description
+  .description {
+    &__photos__col__item img,
+    &__photos__item img {
+      display: none;
+    }
+    &__photos__col__item {
+      width: 100%;
+      height: 196px;
+      &:nth-child(1) {
+        background: url(../img/sec-description/1-320.png);
+      }
+      &:nth-child(2) {
+        background: url(../img/sec-description/2-320.png);
+      }
+    }
+    &__photos__item {
+      width: 100%;
+      height: 424px;
+      background: url(../img/sec-description/3-320.png);
+    }
+  }
+}

@@ -1,0 +1,626 @@
+@import "reset";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+@font-face {
+  font-family: "Archangelsk";
+  src: url(../fonts/Archangelsk.ttf);
+  font-weight: 400;
+}
+
+$yellowcl: #f8f200;
+$btnhover: #2b2a2a;
+
+@mixin base-icon($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin title($color) {
+  color: $color;
+  font-family: "Archangelsk", sans-serif;
+  font-size: 62px;
+  margin: 0 0 25px;
+}
+@mixin subtitle($width, $color) {
+  width: $width;
+  color: $color;
+  font-size: 18px;
+  line-height: 34px;
+}
+@mixin btn($padd-vert, $fz, $lh, $bg-color) {
+  padding: $padd-vert 50px;
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: 700;
+  background: $bg-color;
+  transition-duration: 0.3s;
+}
+@mixin list-item($image, $size) {
+  content: "";
+  position: absolute;
+  width: $size;
+  height: $size;
+  background: url($image) center/cover no-repeat;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+section {
+  padding: 70px 0;
+}
+a:hover {
+  text-decoration: underline;
+}
+.list-li {
+  font-size: 18px;
+  line-height: 21px;
+  padding-left: 42px;
+  margin-bottom: 26px;
+}
+.container {
+  max-width: 1352px;
+  padding: 0 36px;
+  margin: 0 auto;
+}
+.highlight {
+  font-size: 18px;
+  color: #52bedc;
+  font-weight: 700;
+  line-height: 34px;
+}
+
+// Section Banner
+.banner {
+  padding: 20px 0 0;
+  background: url(../img/header/1.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-animation: change-bg 10s linear infinite;
+  -moz-animation: all change-bg 10s linear infinite;
+  animation: change-bg 10s infinite;
+  .header {
+    margin-bottom: 538px;
+  }
+  &__social-media {
+    display: flex;
+    gap: 40px;
+    a {
+      text-decoration: none;
+    }
+    span {
+      font-size: 30px;
+      color: #000;
+    }
+  }
+  &__youtube-logo:hover {
+    color: #ab3434;
+  }
+  &__vk-logo:hover {
+    color: #4434ab;
+  }
+  &__facebook-logo:hover {
+    color: #230664;
+  }
+  &__twitter-logo:hover {
+    color: #3468ab;
+  }
+  &__twitch-logo:hover {
+    color: #562281;
+  }
+  &__inst-logo:hover {
+    color: #8a2a6f;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__social-media__item {
+    @include base-icon(30px, 30px);
+    transition-duration: 0.2s;
+  }
+  &__social-media__item:hover {
+    transform: scale(1.15);
+  }
+  &__sticker {
+    width: 624px;
+    margin: 0 0 0 auto;
+    padding: 70px;
+    background-color: $yellowcl;
+    background: linear-gradient(135deg, transparent 35px, $yellowcl 0) top left,
+      linear-gradient(-45deg, transparent 35px, $yellowcl 0) bottom right;
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    &__title {
+      @include title(#000);
+      margin-top: 0;
+    }
+    &__btn {
+      @include btn(19px, 24px, 40px, #000);
+      color: $yellowcl;
+      &:hover {
+        background: $btnhover;
+      }
+    }
+  }
+}
+
+@-moz-keyframes change-bg {
+  0% {
+    background-image: url(../img/header/1.png);
+  }
+  33% {
+    background-image: url(../img/header/2.png);
+  }
+  66% {
+    background-image: url(../img/header/3.png);
+  }
+}
+@keyframes change-bg {
+  0% {
+    background-image: url(../img/header/1.png);
+  }
+  33% {
+    background-image: url(../img/header/2.png);
+  }
+  66% {
+    background-image: url(../img/header/3.png);
+  }
+}
+
+// Section Description
+.description {
+  &__header {
+    margin-bottom: 70px;
+    &__title {
+      @include title(#000);
+    }
+    &__text {
+      @include subtitle(952px, #777);
+    }
+  }
+  img {
+    width: 100%;
+    clip-path: polygon(10% 0, 100% 0, 100% 83%, 90% 100%, 0 100%, 0 17%);
+  }
+  &__photos {
+    display: flex;
+    gap: 32px;
+    &__col {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    &__col__item {
+      width: 100%;
+    }
+  }
+}
+// Section Game
+.input__features {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 300;
+}
+.label__features {
+  color: #fff;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 300;
+}
+
+.game {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: url(../img/transition.png) repeat-x;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: url(../img/sec-game/transition-bt.png) repeat-x;
+  }
+  position: relative;
+  background: #000;
+  padding: 140px 0 150px;
+  &__header {
+    position: relative;
+    margin-bottom: 50px;
+    &__icon {
+      position: absolute;
+      top: -55px;
+      left: 0;
+      transition-duration: 1.5s;
+    }
+    &__icon:hover {
+      transform: rotate(80deg);
+    }
+    &__title {
+      padding-left: 164px;
+      @include title(#fff);
+      margin-bottom: 40px;
+    }
+    &__text {
+      @include subtitle(952px, #fff);
+    }
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__form {
+    width: 460px;
+    &__user-data {
+      input {
+        width: 100%;
+        @extend .input__features;
+      }
+    }
+    &__file {
+      padding-bottom: 39px;
+      margin-bottom: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px dashed #777;
+      color: #fff;
+      input {
+        height: 39px;
+        opacity: 0;
+      }
+      &__text {
+        text-decoration: underline;
+        margin-bottom: 7px;
+        @extend .input__features;
+      }
+      &__imgs {
+        @extend .label__features;
+      }
+    }
+
+    &__user-data {
+      input {
+        padding-bottom: 13px;
+        border-bottom: 1px solid #777;
+        margin-bottom: 35px;
+        color: #fff;
+      }
+    }
+    &__btn {
+      @include btn(15px, 18px, 21px, $yellowcl);
+      margin-bottom: 15px;
+      &:hover {
+        background: #c9c60d;
+      }
+      &:active {
+        color: #ffffff;
+      }
+    }
+    &__agree {
+      @extend .label__features;
+      &__checkbox {
+        display: none;
+      }
+      &__checkbox-custom {
+        position: relative;
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background: #000;
+        border: 1px solid #777;
+        margin-right: 10px;
+        vertical-align: sub;
+      }
+      &__checkbox-custom::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 14px;
+        height: 14px;
+        background: url(../img/sec-game/check.svg) no-repeat;
+        background-size: contain;
+        margin-top: 1px;
+        opacity: 0;
+        transition: 0.2s;
+      }
+      &__checkbox:checked + &__checkbox-custom::before {
+        opacity: 1;
+      }
+    }
+  }
+  &__wrapper {
+    position: relative;
+  }
+}
+
+.game__consoles {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  max-width: 47%;
+  width: 100%;
+  &__item {
+    max-width: 100%;
+  }
+  &__xbox {
+    &::after {
+      content: "";
+      position: absolute;
+      width: 170%;
+      height: 456px;
+      display: block;
+      background: url(../img/sec-game/yellow-graffiti.png) no-repeat;
+      background-size: contain;
+      z-index: -2;
+      top: 0;
+      left: -51%;
+    }
+    position: relative;
+    z-index: 2;
+    margin-right: 32px;
+  }
+  &__ps {
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 170%;
+      height: 456px;
+      background: url(../img/sec-game/blue-graffiti.png) no-repeat;
+      z-index: -2;
+      background-size: contain;
+      top: -7%;
+      left: -51%;
+      margin-right: 10px;
+    }
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Section HP
+.hp {
+  background: $yellowcl;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 48.7% 48.7%;
+    gap: 32px;
+  }
+  &__item__img {
+    margin-bottom: 26px;
+  }
+  &__item__logos {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    &__item:last-child {
+      margin-right: 0;
+    }
+  }
+  &__item__header {
+    margin-bottom: 25px;
+    &__title {
+      @include title(#000);
+    }
+    &__text {
+      @include subtitle(100%, #000);
+    }
+  }
+  &__item__list {
+    margin-bottom: 45px;
+    &__item {
+      @extend .list-li;
+      position: relative;
+    }
+    &__item:last-child {
+      margin-bottom: 0;
+    }
+    &__item:nth-child(1)::before {
+      @include list-item("../img/sec-hp/icon-adv-1.svg", 32px);
+    }
+    &__item:nth-child(2)::before {
+      @include list-item("../img/sec-hp/icon-adv-2.svg", 32px);
+    }
+    &__item:nth-child(3)::before {
+      @include list-item("../img/sec-hp/icon-adv-3.svg", 32px);
+    }
+  }
+  &__item__btn {
+    @include btn(15px, 18px, 21px, #000);
+    color: $yellowcl;
+    &:hover {
+      background: $btnhover;
+    }
+  }
+}
+
+// Section Serial
+.serial {
+  height: 100vh;
+  position: relative;
+  padding: 30px 0;
+  background: url(../img/sec-serial/bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: 50% 20%;
+  &__container {
+    max-width: 1552px;
+  }
+  &__header {
+    position: absolute;
+    right: 80px;
+    top: 30px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+  &__header__icon {
+    max-width: 140px;
+    height: 60px;
+    height: 100%;
+    margin-right: 35px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__header__trigger-icon {
+    margin-top: 12%;
+  }
+  &__btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__social-media {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__item {
+      margin-bottom: 35px;
+      transition: 0.2s;
+      &:hover {
+        transform: scale(1.15);
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      span {
+        font-size: 30px;
+      }
+    }
+    &__facebook {
+      padding: 0 6px;
+    }
+  }
+  &__logo {
+    position: absolute;
+    max-width: 780px;
+    width: 100%;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+// Section Buy
+.buy {
+  padding: 0;
+  background: #000;
+  &__wrapper {
+    display: flex;
+    position: relative;
+  }
+  &__item__img {
+    max-width: 1000px;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__item-right {
+    width: 50%;
+    padding: 70px 17px;
+  }
+  &__item__title {
+    @include title(#fff);
+  }
+  &__item__list-title {
+    color: #52bedc;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-bottom: 21px;
+  }
+  &__item__kit__list {
+    margin-bottom: 70px;
+    &__item {
+      position: relative;
+      @extend .list-li;
+      color: #fff;
+      &:nth-child(1)::before {
+        @include list-item("../img/sec-buy/disk.svg", 32px);
+      }
+      &:nth-child(2)::before {
+        @include list-item("../img/sec-buy/case.svg", 32px);
+      }
+      &:nth-child(3)::before {
+        @include list-item("../img/sec-buy/collections.svg", 32px);
+      }
+    }
+  }
+  &__item__platforms {
+    img {
+      display: block;
+    }
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: left;
+    align-items: center;
+    gap: 48px 80px;
+  }
+}
+
+// Footer
+.footer {
+  padding: 13px 0;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    &__info a {
+      font-size: 18px;
+      line-height: 21px;
+      color: #000;
+    }
+  }
+}
+
+// Section Copyright
+.copyright {
+  padding: 13px 0;
+  background: #000;
+  &__text {
+    font-size: 12px;
+    line-height: 14px;
+    color: #fff;
+    text-align: center;
+  }
+}
